@@ -1,0 +1,132 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //1rem = 10px, 10/16px = 62.5%
+}
+
+body{
+    background-color: $color-bkg;
+    font-family: 'Roboto', sans-serif;
+    line-height: 16px;
+    letter-spacing: 0.93px;
+    color: $color-text;
+    min-height: 100vh;
+}
+
+a, div, h1, h2, h3, h4, h5, h6, p, span, time {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $color-gray-dark;
+}
+
+h1 {
+    //font-family: 'Vidaloka', serif;
+    font-size: 2rem;
+    line-height: 1;
+    color: $color-red;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: .1rem;
+}
+
+h4 {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: .2rem;
+}
+
+
+.container {
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+
+    max-width: 140rem;
+    margin: 15rem auto 3rem;
+    padding: 0 5rem 0 9rem;
+
+    @include screen( md) {
+        padding: 0 1rem 0 1rem;
+    }
+
+    @include screen(xs) {
+        margin: 10rem auto 1rem;
+    }
+}
+
+.spinner {
+    display: flex;
+    flex-flow: column;
+    
+    margin: 15rem auto 0;
+    text-align: center;
+    font-size: 1.6rem;
+    color: $color-gray-dark;
+}
+
+section {
+    width: 70%;
+    
+    padding: 2.5rem 2rem 0 0;
+    border-top: .2rem solid $color-border;
+
+    @include screen (md) {
+        padding: 2.5rem 0rem 0 0;
+        width: 100%;
+    }
+
+    @include screen (xs) {
+        width: 100%;
+        h2 { font-size: 1.2rem;}
+    }
+}
+
+aside {
+    width: 30%;
+
+    padding: 2.5rem 0 0 2rem;
+    border-top: .2rem solid $color-border;
+
+    h3 { margin-bottom: 1.2rem; }
+
+    @include screen (md) {
+        padding: 2.5rem 0 0 0;
+        width: 60%;
+    }
+    
+    @include screen (xs) {
+        padding: 1.8rem 0 0 0;
+        width: 80%;  
+    }
+}

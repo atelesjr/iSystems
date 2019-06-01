@@ -1,0 +1,31 @@
+@mixin shadow_box {
+    -webkit-box-shadow: 0px 0px 36px -10px rgba(0,0,0,0.28);
+    -moz-box-shadow: 0px 0px 36px -10px rgba(0,0,0,0.28);
+    box-shadow: 0px 0px 36px -10px rgba(0,0,0,0.28);
+}
+
+@mixin link_set {
+    text-decoration: none;
+    color: $color-gray-dark;
+    transition: all .1s ease-in-out;
+
+    &:hover {
+        font-weight: 600;
+    }
+}
+
+
+@mixin screen($screen_value:sm) {
+    @if $screen_value == xs {
+      @media only screen and (max-width: $screen-xs) { @content; }
+    }
+    @else if $screen_value == sm { //phone
+        @media only screen and (max-width: $screen-sm) { @content; }
+    }
+    @else if $screen_value == md {
+        @media only screen and (max-width: $screen-md) { @content; }
+    }
+    @else if $screen_value == lg {
+        @media only screen and (max-width: $screen-lg) { @content; }
+    }
+}
